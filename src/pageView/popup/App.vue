@@ -3,10 +3,10 @@
     <img src="@images/logo_x128.png" alt="">
     <p>{{ msg }}</p>
     <div class="icon">
-      <a>
+      <a target="_blank" href="https://github.com/ubey-opensource/Browser-Extension-Boilerplate">
         <i class="iconfont icon-github"></i>
       </a>
-      <a>
+      <a target="_blank" href="https://gitee.com/ubey-opensource/browser-extension-boilerplate">
         <i class="iconfont icon-gitee"></i>
       </a>
     </div>
@@ -53,6 +53,7 @@ export default {
   right: 5px;
 
   a {
+    cursor: pointer;
     color: $fontGaryColor;
     transition: color 0.3s ease-in-out;
 

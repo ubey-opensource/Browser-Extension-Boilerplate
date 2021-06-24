@@ -1,5 +1,5 @@
 {
-  "name": "Browser Extension Boilerpate",
+  "name": "browser-extension-boilerpate",
   "version": "1.0.0",
   "description": "A template for browser extension development.",
   "main": "utils/build.js",
