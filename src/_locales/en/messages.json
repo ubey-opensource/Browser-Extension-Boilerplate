@@ -1,0 +1,6 @@
+{
+  "default_title": { "message": "Browser Extension Boilerplate" },
+  "description": {
+    "message": "A Vue based browser extension development template"
+  }
+}

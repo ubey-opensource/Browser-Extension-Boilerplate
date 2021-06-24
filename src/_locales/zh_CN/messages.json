@@ -1,0 +1,8 @@
+{
+  "default_title": {
+    "message": "扩展应用"
+  },
+  "description": {
+    "message": "一个基于vue的浏览器扩展开发模板"
+  }
+}

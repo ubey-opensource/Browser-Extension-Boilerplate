@@ -1,0 +1,47 @@
+{
+  "name": "Browser Extension Boilerpate",
+  "version": "1.0.0",
+  "description": "A template for browser extension development.",
+  "main": "utils/build.js",
+  "scripts": {
+    "build": "cross-env NODE_ENV='production' node utils/build.js",
+    "start": "cross-env NODE_ENV='development' node utils/build.js"
+  },
+  "keywords": [],
+  "author": "ubeytech",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/core": "^7.14.6",
+    "@babel/plugin-proposal-class-properties": "^7.14.5",
+    "@babel/plugin-proposal-class-static-block": "^7.14.5",
+    "@babel/plugin-proposal-decorators": "^7.14.5",
+    "@babel/plugin-proposal-private-methods": "^7.14.5",
+    "@babel/plugin-transform-runtime": "^7.14.5",
+    "@babel/preset-env": "^7.14.5",
+    "@types/chrome": "0.0.145",
+    "@vue/compiler-sfc": "^3.1.1",
+    "babel-loader": "^8.2.2",
+    "clean-webpack-plugin": "^4.0.0-alpha.0",
+    "copy-webpack-plugin": "^9.0.0",
+    "cross-env": "^7.0.3",
+    "css-loader": "^5.2.6",
+    "file-loader": "^6.2.0",
+    "friendly-errors-webpack-plugin": "^1.7.0",
+    "html-loader": "^2.1.2",
+    "html-webpack-plugin": "^5.3.1",
+    "mini-css-extract-plugin": "^1.6.0",
+    "node-sass": "^6.0.0",
+    "postcss-loader": "^6.1.0",
+    "sass-loader": "^12.1.0",
+    "style-loader": "^2.0.0",
+    "url-loader": "^4.1.1",
+    "vue-loader": "^16.2.0",
+    "vue-style-loader": "^4.1.3",
+    "webpack": "^5.39.1",
+    "webpack-cli": "^4.7.2"
+  },
+  "dependencies": {
+    "jquery": "^3.6.0",
+    "vue": "^3.1.1"
+  }
+}

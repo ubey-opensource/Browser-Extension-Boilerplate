@@ -1,0 +1,12 @@
+package-lock.json
+node_modules
+build
+build.zip
+build.rar
+build.7z
+secrets.*.js
+*.log
+*.crx
+*.zip
+.idea
+public
