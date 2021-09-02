@@ -21,7 +21,6 @@ function getEntryObject() {
     //获取src/js根下所有的js文件
     const jsDirPath = path.resolve(__Project, "page");
     const jsFiles = getFilesOrFolders(jsDirPath, true)
-
     //遍历 获取到的文件数组,转换成对象格式
     jsFiles.forEach((item) => {
         let jsFileMatch = item.match(/(.*?)\.js/);
@@ -38,7 +37,7 @@ function getEntryObject() {
 function addHtmlforjs(entry) {
     return [].concat(Object.keys(entry)
         //排除content.js
-        .filter((item) => item !== "content")
+        .filter((item) => !(item.toLocaleLowerCase().indexOf("content") > -1))
         .map((item) =>
             new HtmlWebpackPlugin({
                 template: path.resolve(__Project, "index.html"),
@@ -84,6 +83,8 @@ function addAlias(folderPath, filter) {
  */
 const alias = {
     "@": __Project,
+    "@common": path.resolve(__Project, "common"),
+    "@components": path.resolve(__Project, "components"),
 }
 
 /**
@@ -106,10 +107,11 @@ const rules = [
     {
         test: /\.css$/,
         use: [
-            MiniCssExtractPlugin.loader,
+            // MiniCssExtractPlugin.loader,
+            "style-loader",
             "css-loader",
         ],
-        exclude: /node_modules/,
+        // exclude: /node_modules/,
     },
 
     /**
@@ -140,6 +142,7 @@ const rules = [
         },
         exclude: /(node_modules|icon)/,
     },
+
 
     /**
      * html文件
@@ -192,7 +195,7 @@ const rules = [
                 name: "assets/fonts/[name].[hash:10].[ext]"
             },
         },
-        exclude: /node_modules/,
+        // exclude: /node_modules/,
     },
 ]
 
@@ -212,6 +215,10 @@ const options = {
     resolve: {
         alias: alias,
         extensions: ['.js', '.vue', '.scss']
+    },
+    performance: {
+        maxEntrypointSize: 1024 * 1024 * 10,
+        maxAssetSize: 1024 * 1024 * 10
     },
     plugins: [
         // 清理打包出来的文件夹
@@ -234,6 +241,10 @@ const options = {
                     from: "src/assets/",
                     to: "./assets"
                 },
+                {
+                    from: "src/content/",
+                    to: "./content"
+                }
 
             ],
         }),// 拷贝静态资源
