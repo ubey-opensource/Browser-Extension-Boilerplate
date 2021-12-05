@@ -1,4 +1,4 @@
-import init from "./background/init"
-
+import init from "./background/init";
 
 init();
+

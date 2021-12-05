@@ -4,9 +4,10 @@
   "version": "1.0.0",
   "description": "__MSG_description__",
   "background": {
-    "page": "background/background.html"
+    "service_worker": "./background.js"
   },
-  "browser_action": {
+  "manifest_version": 3,
+  "action": {
     "default_popup": "popup/popup.html",
     "default_icon": "assets/logo/logo_x48.png"
   },
@@ -17,27 +18,14 @@
   },
   "content_scripts": [
     {
-      "matches": [
-        "<all_urls>"
-      ],
+      "matches": ["<all_urls>"],
       "css": [],
-      "js": [
-        "content/content.bundle.js"
-      ],
-      "run_at": "document_start",
+      "js": ["content/content.js"],
+      "run_at": "document_end",
       "all_frames": true
     }
   ],
-  "manifest_version": 2,
-  "permissions": [
-    "downloads",
-    "contextMenus",
-    "tabs",
-    "storage",
-    "<all_urls>",
-    "webRequest",
-    "webRequestBlocking",
-    "cookies"
-  ],
-  "content_security_policy": "script-src 'self' 'unsafe-eval' https://www.google-analytics.com; object-src 'self';"
+
+  "permissions": ["storage"],
+  "host_permissions": ["*://*/*"]
 }
