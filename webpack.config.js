@@ -35,7 +35,6 @@ function getEntryObject() {
     if (pageFileMatch)
       entry[`content-${pageFileMatch[1]}`] = path.resolve(contentDirPath, item);
   });
-  console.log(entry);
   return entry;
 }
 
